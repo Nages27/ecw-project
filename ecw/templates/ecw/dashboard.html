@@ -3,52 +3,52 @@
 
 {% block content %}
 <div class="dashboard-container">
-    <header>
-        <div class="logo">
-            <h1>Hostinger</h1>
-        </div>
+ <header>
+  <div class="logo">
+     <h1>Hostinger</h1>
+    </div>
 
-        <div class="nav-box">
-            <div class="main-links">
-                <a href="{% url 'dashboard' %}">Home</a>
-                <a href="{% url 'profile' %}">Profile</a>
-                <a href="{% url 'logout' %}">Logout</a>
-            </div>
+    <div class="nav-box">
+      <div class="main-links">
+       <a href="{% url 'dashboard' %}">Home</a>
+       <a href="{% url 'profile' %}">Profile</a>
+       <a href="{% url 'logout' %}">Logout</a>
+     </div>
             
-            <div class="sub-link">
-                <a href="{% url 'electronics' %}">Electronics</a>
-            </div>
+         <div class="sub-link">
+         <a href="{% url 'electronics' %}">Electronics</a>
+          </div>
         </div>
     </header>
 
     <section class="hero-banner">
-        <div class="hero-content">
-            <h2 class="yellow-text">Best Electronic</h2>
-            <h1>Product Online Shop in The World</h1>
-            <p>Our shop provide the perfect & best quality product</p>
-            <button class="shop-btn">Shop Now</button>
+      <div class="hero-content">
+        <h2 class="yellow-text">Best Electronic</h2>
+        <h1>Product Online Shop in The World</h1>
+         <p>Our shop provide the perfect & best quality product</p>
+          <button class="shop-btn">Shop Now</button>
         </div>
         <div class="hero-image">
             <img src="{% static 'ecw/images/dashboard.jpg' %}" alt="Main Product"  style="width: 500px; height:300px">
         </div>
     </section>
 
-    <section class="accessories">
-        <h3>Electronic Accessories</h3>
-        <div class="card-container">
-            <div class="card">
-                <p>AUDIO & HEADPHONE</p>
-                <h4>Up to 15% Off</h4>
+ <section class="accessories">
+    <h3>Electronic Accessories</h3>
+    <div class="card-container">
+       <div class="card">
+       <p>AUDIO & HEADPHONE</p>
+        <h4>Up to 15% Off</h4>
+          </div>
+          <div class="card">
+          <p>TV</p>
+         <h4>Up to 10% Off</h4>
             </div>
-            <div class="card">
-                <p>TV</p>
-                <h4>Up to 10% Off</h4>
-            </div>
-            <div class="card">
-                <p>MOBILE ACCESSORIES</p>
-                <h4>Up to 5% Off</h4>
-            </div>
-        </div>
+         <div class="card">
+         <p>MOBILE ACCESSORIES</p>
+         <h4>Up to 5% Off</h4>
+     </div>
+     </div>
     </section>
 </div>
 {% endblock %}

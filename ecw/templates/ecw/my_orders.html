@@ -23,8 +23,29 @@
     tr:hover {
         background-color: #f1f1f1;
     }
+    .nav-box {
+        background-color: #333;
+        padding: 10px;
+    }
+    .nav-box a {
+        color: white;
+        margin-right: 15px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .nav-box a:hover {
+        color: #f0a500;
+    }
 </style>
-
+<header>
+    <div class="nav-box">
+        <div class="main-links">
+            <a href="{% url 'dashboard' %}">Home</a>
+            <a href="{% url 'profile' %}">Profile</a>
+            <a href="{% url 'logout' %}">Logout</a>
+        </div>
+    </div>
+</header>
 <div class="history-container">
     <h2>My Orders</h2>
 
@@ -32,23 +53,23 @@
         <table class="order-table">
             <thead>
                 <tr>
-                    <th>Product</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Status</th>
-                    <th>Ordered At</th>
+                 <th>Product</th>
+                 <th>Description</th>
+                 <th>Price</th>
+                 <th>Quantity</th>
+                 <th>Status</th>
+                 <th>Ordered At</th>
                 </tr>
             </thead>
             <tbody>
             {% for order in orders %}
-                <tr>
-                    <td>{{ order.product_name }}</td>
-                    <td>{{ order.product_description }}</td>
-                    <td>₹{{ order.price }}</td>
-                    <td>{{ order.quantity }}</td>
-                    <td>{{ order.status }}</td>
-                    <td>{{ order.ordered_at|date:"d M Y" }}</td>
+            <tr>
+                 <td>{{ order.product_name }}</td>
+                 <td>{{ order.product_description }}</td>
+                <td>₹{{ order.price }}</td>
+                <td>{{ order.quantity }}</td>
+                <td>{{ order.status }}</td>
+                 <td>{{ order.ordered_at|date:"d M Y" }}</td>
                 </tr>
             {% endfor %}
             </tbody>
