@@ -1,0 +1,52 @@
+{% extends 'ecw/base.html' %}
+{% load static %}
+{% block title %}Electronics{% endblock %}
+
+{% block content %}
+<header class="shop-header">
+    <div class="logo">
+        <h1>Electronics</h1>
+    </div>
+    <nav class="nav-links">
+        <a href="{% url 'dashboard' %}">Home</a>
+        <a href="{% url 'view_cart' %}">View Cart</a>
+        <a href="{% url 'profile' %}">Profile</a>
+        <a href="{% url 'logout' %}">Logout</a>
+        <a href="{% url 'my_orders' %}">My Orders</a>
+
+    </nav>
+</header>
+
+<div class="electronics-hero">
+    <div class="hero-content">
+        <h2 class="yellow-text">Amazing Deals on</h2>
+        <h1>Electronic gadgets</h1>
+        <p>Our shop provides the perfect & best quality products</p>
+    </div>
+    <div class="hero-img">
+        <img src="{% static 'ecw/images/i1.jpg' %}" alt="Featured Item"  style="width: 900px; height: auto;">
+    </div>
+</div>
+
+<div class="product-section">
+    <h2 class="section-title">Electronic Accessories</h2>
+    <div class="product-grid">
+        {% for product in products %}
+        <div class="product-card">
+            <div class="img-box">
+                <img src="{% static product.image %}" alt="{{product.name}}">
+            </div>
+            <h3>{{product.name}}</h3>
+            <div class="card-actions">
+                <a href="{% url 'add' product.id %}">
+                    <button class="btn-add">Add to Cart</button>
+                </a>
+                <a href="{% url 'view' product.id %}">
+                    <button class="btn-view">View</button>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

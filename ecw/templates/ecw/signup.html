@@ -1,5 +1,5 @@
 {% extends 'ecw/base.html'%}
-
+{% load static %}
 {%block title%}Sign up{%endblock%} 
 {%block page_heading%}Sign up{%endblock%}
 {%block content%}
@@ -9,7 +9,11 @@
 <p>{{error_message}}</p>
 {% endif %}
 
-<form action="{% url 'signup' %}" method="Post">
+
+<div class="auth-wrapper">
+    <div class="auth-card">
+<form action="{% url 'signup' %}" method="post">
+    {% csrf_token %}
 <fieldset>
     <label>Name: </label>
     <input type="text" name="name" placeholder="Enter the name">
@@ -22,4 +26,6 @@
     </fieldset>
    <button>submit</button>
 </form>
-{%endblock%}
+    </div>
+</div>
+    {%endblock%}

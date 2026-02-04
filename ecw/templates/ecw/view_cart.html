@@ -1,0 +1,25 @@
+{% extends 'ecw/base.html' %}
+{% load static %}
+
+{% block title %}View Cart{% endblock %}
+
+{% block content %}
+<h2>Your Cart</h2>
+
+{% if cart %}
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+        {% for item in cart %}
+            <div style="border: 1px solid #ccc; padding: 15px; width: 200px; text-align: center; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <img src="{% static item.image %}" width="150" style="margin-bottom: 10px;">
+                <p style="font-weight: bold; margin: 5px 0; color: black;">Product Name : {{ item.name }}</p>
+                <p style="color: #020202; margin: 5px 0; font-weight: bold">Price : ₹{{ item.price }}</p>
+                <p style="font-weight: bold;color: #020202; margin: 5px 0; ">Quantity : {{item.quantity}}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p style="text-align: center; margin-top: 20px;">Your cart is empty</p>
+{% endif %}
+
+{% endblock %}
+

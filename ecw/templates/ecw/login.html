@@ -8,12 +8,11 @@
 {% if error_message %}
 <p>{{error_message}}</p>
 {% endif %}
-<form action="{% url 'login' %}" method="POST">
+<div class="auth-wrapper">
+    <div class="auth-card">
+<form action="{% url 'login' %}" method="post">
  {% csrf_token %}
    <fieldset>
-    <label>Name: </label>
-    <input type="text" name="name" placeholder="Enter the name">
-
     <label>Email:</label>
     <input type="email" name="email" placeholder="Enter the Email">
 
@@ -23,4 +22,6 @@
 
     <button>submit</button>
 </form>
+    </div>
+</div>
 {%endblock%}

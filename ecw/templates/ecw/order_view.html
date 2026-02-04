@@ -1,0 +1,28 @@
+{% extends 'ecw/base.html' %}
+{% load static %}
+{% block title %}order view{% endblock %} 
+{% block content %}
+<div class="product-detail-view">
+    <div class="product-visual">
+        <div class="color-block">
+            <img src="{% static product.image %}" alt="{{ product.name }}">
+        </div>
+    </div>
+
+    <div class="product-description-content">
+        <span class="date-label">NOVEMBER RELEASE</span>
+        <h1 class="item-name">{{ product.name }}</h1>
+        <div class="item-text">
+            <p style="color: #000000; font-style: italic; text-align: justify; line-height: 1.5;">{{ product.description }}</p>
+            <p style="color: #000000; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top: 10px 0 0 0; font-weight: bold;">PRICE : {{product.price}}</p>
+        </div>
+
+
+        <div class="action-row">
+        <form method="post" action="{% url 'place_order' product.id %}">
+    
+  {% csrf_token %}
+    <button type="submit">Order</button>
+</form>
+</div>
+{% endblock %}

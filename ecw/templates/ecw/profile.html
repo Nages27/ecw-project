@@ -1,0 +1,11 @@
+{% extends 'ecw/base.html' %}
+
+{% block title %}profile{% endblock %}
+{% block content %}
+
+<p>Name : {{ user.name }}</p>
+<p>Email : {{ user.email }}</p>
+
+<li><a href="{% url 'dashboard' %}">Home</a></li>  
+
+{% endblock %}
